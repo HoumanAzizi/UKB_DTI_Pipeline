@@ -15,7 +15,7 @@ model_mask=/outputs_DWI/mni_icbm152_t1_tal_nlin_asym_09c_mask.nii.gz
 # Find all the .nii.gz files within the MASKS directory and output their names to a CSV file
 # NOTE: all the masks should be nii.gz and they should not be any subdirectory
 MASK_FILES=(/outputs_DWI/MASKS/*.nii.gz)
-printf '%s\n' "${MASK_FILES[@]##*/}" > ${outputdir}/MASK_Output_Order.csv
+printf '%s\n' "${MASK_FILES[@]##*/}" > /outputs_DWI/MASK_Output_Order.csv
 
 # Define current subject's T1w and B0 images location
 t1=/outputs_DWI/t1w/$(basename ${subject})_T1w.nii.gz
