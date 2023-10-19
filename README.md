@@ -66,6 +66,7 @@ Wrangling the results:
 ## Script Descriptions
 ### dwi_qbatch.sh
 Script helps to run jobs in parallel using qbatch and by calling process_DTI.sh in singularity. Note that this can be done separately in bash as well. 
+
 Input of dwi_qbatch.sh should be in the following format:
 * `Subject_ID,Subject_Folder_Name,Subject_Squashfs_File_Name`
     * e.g. 1234567,sub-1234567_ses-2,tractoflow_100.squashfs
@@ -88,11 +89,14 @@ Creates a single final .csv file including the ROI-based results of all subjects
 
 ### find_failed_jobs.sh (Extra Script)
 This script finds all the failed subjects after initial run and generates a new joblist file for failed subjects to rerun. 
+
 This will create a `./failed_joblist.txt` file which has a joblist for all failed subjects to rerun.
 
 ### outputs_to_squashfs.sh (Extra Script)
 After getting the results, this script will save all subjects' registration files in squashfs for storage. 
+
 The naming convention of squashfs files is based on the first 3 digits of subject ID. (e.g. `./output_DWI_sqfs/subs-123.squashfs` will include all subjects with IDs 123xxxx)
+
 ---
 
 ## Acknowledgement
